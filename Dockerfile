@@ -2,7 +2,7 @@ FROM centos:7
 
 # Build-time variables
 
-ARG REFRESHED_AT=2018-10-16
+ENV REFRESHED_AT=2018-10-16
 
 # Install prerequisites.
 
