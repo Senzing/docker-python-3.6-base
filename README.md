@@ -29,7 +29,7 @@ To see a demonstration of senzing, python, and mysql, see
 ### Build docker image
 
 ```console
-docker build --tag senzing/python-3.6-base https://github.com/senzing/docker-python-3.6-base.git
+sudo docker build --tag senzing/python-3.6-base https://github.com/senzing/docker-python-3.6-base.git
 ```
 
 ### Create SENZING_DIR
@@ -101,7 +101,7 @@ If you do not already have an `/opt/senzing` directory on your local system, her
    Example:
 
     ```console
-    docker ps
+    sudo docker ps
 
     # Choose value from NAMES column of docker ps
     export MYSQL_HOST=docker-container-name
@@ -112,14 +112,14 @@ If you do not already have an `/opt/senzing` directory on your local system, her
 1. Option #1 - Run the docker container without database or volumes.
 
     ```console
-    docker run -it \
+    sudo docker run -it \
       senzing/python-3.6-base
     ```
 
 1. Option #2 - Run the docker container with database and volumes.
 
     ```console
-    docker run -it  \
+    sudo docker run -it  \
       --volume ${SENZING_DIR}:/opt/senzing \
       --env SENZING_DATABASE_URL="mysql://${MYSQL_USERNAME}:${MYSQL_PASSWORD}@${MYSQL_HOST}:3306/${MYSQL_DATABASE}" \
       senzing/python-3.6-base
@@ -131,7 +131,7 @@ If you do not already have an `/opt/senzing` directory on your local system, her
    Example:
 
     ```console
-    docker network ls
+    sudo docker network ls
 
     # Choose value from NAME column of docker network ls
     export MYSQL_NETWORK=nameofthe_network
@@ -140,7 +140,7 @@ If you do not already have an `/opt/senzing` directory on your local system, her
     Run docker container.
 
     ```console
-    docker run -it  \
+    sudo docker run -it  \
       --volume ${SENZING_DIR}:/opt/senzing \
       --net ${MYSQL_NETWORK} \
       --env SENZING_DATABASE_URL="mysql://${MYSQL_USERNAME}:${MYSQL_PASSWORD}@${MYSQL_HOST}:3306/${MYSQL_DATABASE}" \
@@ -168,8 +168,8 @@ make --version
 #### docker
 
 ```console
-docker --version
-docker run hello-world
+sudo docker --version
+sudo docker run hello-world
 ```
 
 ### Set environment variables for development
@@ -214,5 +214,5 @@ docker run hello-world
 
     ```console
     cd ${GIT_REPOSITORY_DIR}
-    docker build --tag ${DOCKER_IMAGE_TAG} .
+    sudo docker build --tag ${DOCKER_IMAGE_TAG} .
     ```
