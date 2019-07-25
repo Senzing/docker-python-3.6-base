@@ -1,5 +1,12 @@
 # docker-python-3.6-base
 
+## :no_entry: Deprecated
+
+Deprecated in favor of Python 3.7 and above.
+See [Senzing/docker-senzing-base](https://github.com/Senzing/docker-senzing-base)
+
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 ## Overview
 
 The `senzing/python-3.6-base` docker image is a Senzing-ready, python 3.6 image.
@@ -69,6 +76,7 @@ If you do not already have an `/opt/senzing` directory on your local system, her
         ```
 
     1. macOS
+
         ```console
         sudo mkdir -p ${SENZING_DIR}
 
